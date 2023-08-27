@@ -1,6 +1,9 @@
 // Je récupere l'élément body.
 const body = document.querySelector('body');
 
+// Variable pour la couleur du crayon choisie (blanc par default).
+let pencilColor = '#F0F';
+
 // Je créé la div 'pixelsContainer' et lui ajoute une classe.
 const pixelsContainer = document.createElement('div');
 pixelsContainer.classList = 'pixelsContainer';
@@ -19,16 +22,14 @@ for (let index = 0; index < pixelsNbr; index++) {
     };
 };
 
-
 // J'organise les éléments (enfants, parents).
 body.appendChild(pixelsContainer);
 
-
-// Ecouteur test
+// Ecouteur de clics
 const lespixels = document.querySelectorAll('.pixel');
 
 lespixels.forEach(pixel => {
     pixel.addEventListener('click', () => {
-        pixel.style.backgroundColor = '#F0F';
+        pixel.style.backgroundColor = pencilColor;
     });
 });
