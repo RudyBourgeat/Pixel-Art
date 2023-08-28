@@ -68,6 +68,7 @@ paletteCloseButton.addEventListener('click', () => {
 colorsChoices.forEach(choice => {
     choice.addEventListener('click', () => {
         pencilColor = choice.colorCode;
+        spraypaint.style.backgroundColor = choice.colorCode;
         spraypaint.style.display = 'flex';
         subTitle.style.display = 'block';
         colorsPalette.style.display = 'none';
