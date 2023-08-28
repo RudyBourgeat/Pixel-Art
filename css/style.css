@@ -58,6 +58,7 @@ h2 {
 
 #colors-palette-close-button:hover {
     box-shadow: inset -1px 2px 8px 2px;
+    background-color: #e74d3cd1;
 }
 
 .pixelsContainer {
