@@ -32,9 +32,16 @@ h2 {
     box-shadow: inset 0px 0px 8px 2px;
 }
 
-#color-palette {
+#colors-palette {
     display: none;
-    border: solid 1px black;
+}
+
+.color-choice {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    box-shadow: inset -1px 2px 8px 0px;
+    border-radius: 50px
 }
 
 .pixelsContainer {
