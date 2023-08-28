@@ -79,4 +79,11 @@ colorsChoices.forEach(choice => {
     });
 });
 
+// Sur le bouton de nettoyage
+washButton.addEventListener('click', () => {
+    lespixels.forEach(pixel => {
+        pixel.style.backgroundColor = '#FBFCFC';
+    });
+});
+
 //#############################################################
