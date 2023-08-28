@@ -62,6 +62,20 @@ h2 {
     box-shadow: inset 0px 0px 8px 2px;
 }
 
+#grid-size-form-submit-button {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    box-shadow: inset -1px 2px 8px 0px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+#grid-size-form-submit-button:hover {
+    box-shadow: inset -1px 2px 8px 2px;
+    background-color: #58D68D;
+}
+
 #colors-palette {
     display: none;
 }
@@ -93,6 +107,19 @@ h2 {
 
 #resize-menu {
     display: none;
+}
+
+#grid-size-close-button {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    box-shadow: inset -1px 2px 8px 0px;
+    border-radius: 50px
+}
+
+#grid-size-close-button:hover {
+    box-shadow: inset -1px 2px 8px 2px;
+    background-color: #e74d3cd1;
 }
 
 .pixelsContainer {

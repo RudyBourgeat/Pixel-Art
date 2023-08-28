@@ -11,16 +11,20 @@ pixelsContainer.classList = 'pixelsContainer';
 // Je créé les pixels grace a une boucle 'for'.
 let pixelsNbr = 40;
 
-for (let index = 0; index < pixelsNbr; index++) {
-    const column = document.createElement('div');
-    column.classList = 'column';
-    pixelsContainer.appendChild(column);
+function createPixels() {
     for (let index = 0; index < pixelsNbr; index++) {
-        const pixel = document.createElement('div');
-        pixel.classList = 'pixel';
-        column.appendChild(pixel);
+        const column = document.createElement('div');
+        column.classList = 'column';
+        pixelsContainer.appendChild(column);
+        for (let index = 0; index < pixelsNbr; index++) {
+            const pixel = document.createElement('div');
+            pixel.classList = 'pixel';
+            column.appendChild(pixel);
+        };
     };
 };
+
+createPixels();
 
 // J'organise les éléments (enfants, parents).
 body.appendChild(pixelsContainer);
@@ -37,7 +41,8 @@ for (color of colors) {
 };
 
 //############## Ecouteurs d'évenements ######################
-const lespixels = document.querySelectorAll('.pixel');
+let lespixels = document.querySelectorAll('.pixel');
+const columns = document.querySelectorAll('.column');
 const subTitle = document.getElementById('subTitle');
 const spraypaint = document.getElementById('color-icon');
 const paletteCloseButton = document.getElementById('colors-palette-close-button');
@@ -46,13 +51,18 @@ const washButton = document.getElementById('wash-icon');
 const resizeButton = document.getElementById('grid-resize');
 const resizeMenu = document.getElementById('resize-menu');
 const gridSizeForm = document.getElementById('grid-Size-Form');
+const gridSizeCloseButton = document.getElementById('grid-size-close-button');
 
 // Sur les pixels
-lespixels.forEach(pixel => {
-    pixel.addEventListener('click', () => {
-        pixel.style.backgroundColor = pencilColor;
+function addEventListenerOnPixels(pixels) {
+    pixels.forEach(pixel => {
+        pixel.addEventListener('click', () => {
+            pixel.style.backgroundColor = pencilColor;
+        });
     });
-});
+};
+
+addEventListenerOnPixels(lespixels);
 
 // Sur le bouton bombe de peinture
 spraypaint.addEventListener('click', () => {
@@ -92,6 +102,15 @@ washButton.addEventListener('click', () => {
     });
 });
 
+// Sur le boutton pour fermer le menu dimensions
+gridSizeCloseButton.addEventListener('click', () => {
+    spraypaint.style.display = 'flex';
+    washButton.style.display = 'flex'
+    resizeButton.style.display = 'flex';
+    subTitle.style.display = 'block';
+    resizeMenu.style.display = 'none';
+});
+
 // Sur le bouton de mesure des dimension
 resizeButton.addEventListener('click', () => {
     spraypaint.style.display = 'none';
@@ -108,7 +127,13 @@ gridSizeForm.addEventListener('submit', (event) => {
     if (newGridSize) {
         Math.round(newGridSize);
         pixelsNbr = newGridSize;
+        for (pixel of lespixels) { pixel.remove() };
+        for (column of columns) { column.remove() };
+        createPixels();
+        lespixels = document.querySelectorAll('.pixel'); // Je met à jour le contenue de la variable qui viens d'être remove.
+        addEventListenerOnPixels(lespixels);
     };
+    // La nouvelle grille est créé on re-affiche la navbar
     spraypaint.style.display = 'flex';
     washButton.style.display = 'flex'
     resizeButton.style.display = 'flex';
