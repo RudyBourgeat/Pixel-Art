@@ -9,7 +9,7 @@ const pixelsContainer = document.createElement('div');
 pixelsContainer.classList = 'pixelsContainer';
 
 // Je créé les pixels grace a une boucle 'for'.
-const pixelsNbr = 40;
+let pixelsNbr = 40;
 
 for (let index = 0; index < pixelsNbr; index++) {
     const column = document.createElement('div');
@@ -45,6 +45,7 @@ const colorsChoices = document.querySelectorAll('.color-choice');
 const washButton = document.getElementById('wash-icon');
 const resizeButton = document.getElementById('grid-resize');
 const resizeMenu = document.getElementById('resize-menu');
+const gridSizeForm = document.getElementById('grid-Size-Form');
 
 // Sur les pixels
 lespixels.forEach(pixel => {
@@ -98,6 +99,21 @@ resizeButton.addEventListener('click', () => {
     washButton.style.display = 'none';
     resizeButton.style.display = 'none';
     resizeMenu.style.display = 'flex';
+});
+
+// Sur la validation du formulaire pour la taille de la grille
+gridSizeForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newGridSize = Number(document.getElementById('new-grid-size').value);
+    if (newGridSize) {
+        Math.round(newGridSize);
+        pixelsNbr = newGridSize;
+    };
+    spraypaint.style.display = 'flex';
+    washButton.style.display = 'flex'
+    resizeButton.style.display = 'flex';
+    subTitle.style.display = 'block';
+    resizeMenu.style.display = 'none';
 });
 
 //#############################################################
