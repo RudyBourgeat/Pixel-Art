@@ -8,5 +8,6 @@ const colors = [
     { name: "noir", code: "#212F3D" },
     { name: "jaune", code: "#F7DC6F" },
     { name: "bleu", code: "#85C1E9" },
-    { name: "gris", code: "#D5DBDB" }
+    { name: "gris", code: "#D5DBDB" },
+    { name: "fof", code: "#F0F" },
 ];
