@@ -32,6 +32,7 @@ for (color of colors) {
     colorChoice.classList = 'color-choice';
     colorChoice.id = color.name;
     colorChoice.style.backgroundColor = color.code;
+    colorChoice.colorCode = color.code;
     colorsPalette.appendChild(colorChoice);
 };
 
@@ -40,6 +41,7 @@ const lespixels = document.querySelectorAll('.pixel');
 const subTitle = document.getElementById('subTitle');
 const spraypaint = document.getElementById('color-icon');
 const paletteCloseButton = document.getElementById('colors-palette-close-button');
+const colorsChoices = document.querySelectorAll('.color-choice');
 
 // Sur les pixels
 lespixels.forEach(pixel => {
@@ -60,6 +62,16 @@ paletteCloseButton.addEventListener('click', () => {
     spraypaint.style.display = 'flex';
     subTitle.style.display = 'block';
     colorsPalette.style.display = 'none';
+});
+
+// Sur les choix de couleur
+colorsChoices.forEach(choice => {
+    choice.addEventListener('click', () => {
+        pencilColor = choice.colorCode;
+        spraypaint.style.display = 'flex';
+        subTitle.style.display = 'block';
+        colorsPalette.style.display = 'none';
+    });
 });
 
 //#############################################################
