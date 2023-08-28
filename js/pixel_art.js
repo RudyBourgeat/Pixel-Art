@@ -25,7 +25,18 @@ for (let index = 0; index < pixelsNbr; index++) {
 // J'organise les éléments (enfants, parents).
 body.appendChild(pixelsContainer);
 
-// Ecouteur de clics
+// Construction de la palette de couleurs (variable 'colors' dans '../data/colors.js').
+const colorsPalette = document.getElementById('colors-palette');
+for (color of colors) {
+    const colorChoice = document.createElement('div');
+    colorChoice.classList = 'color-choice';
+    colorChoice.id = color.name;
+    colorChoice.style.backgroundColor = color.code;
+    colorsPalette.appendChild(colorChoice);
+};
+
+//############## Ecouteurs d'évenements ######################
+// Sur les pixels
 const lespixels = document.querySelectorAll('.pixel');
 
 lespixels.forEach(pixel => {
@@ -33,3 +44,13 @@ lespixels.forEach(pixel => {
         pixel.style.backgroundColor = pencilColor;
     });
 });
+
+// Sur le bouton bombe de peinture
+const subTitle = document.getElementById('subTitle');
+const spraypaint = document.getElementById('color-icon');
+spraypaint.addEventListener('click', () => {
+    spraypaint.style.display = 'none';
+    subTitle.style.display = 'none';
+    colorsPalette.style.display = 'flex';
+});
+//#############################################################
