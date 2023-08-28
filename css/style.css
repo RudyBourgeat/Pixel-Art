@@ -46,6 +46,22 @@ h2 {
     box-shadow: inset 0px 0px 8px 2px;
 }
 
+#grid-resize {
+    border: solid 1.5px rgba(0, 0, 0, 0.597);
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px 2px;
+    width: 4.4vw
+}
+
+#grid-resize:active {
+    background-color: rgba(0, 0, 0, 0.284);
+}
+
+#grid-resize:hover {
+    box-shadow: inset 0px 0px 8px 2px;
+}
+
 #colors-palette {
     display: none;
 }
