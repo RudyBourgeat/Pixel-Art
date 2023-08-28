@@ -44,6 +44,22 @@ h2 {
     border-radius: 50px
 }
 
+.color-choice:hover {
+    box-shadow: inset -1px 2px 8px 2px;
+}
+
+#colors-palette-close-button {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    box-shadow: inset -1px 2px 8px 0px;
+    border-radius: 50px
+}
+
+#colors-palette-close-button:hover {
+    box-shadow: inset -1px 2px 8px 2px;
+}
+
 .pixelsContainer {
     display: flex;
     border: solid 2px blueviolet;
