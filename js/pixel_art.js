@@ -2,7 +2,7 @@
 const body = document.querySelector('body');
 
 // Variable pour la couleur du crayon choisie (blanc par default).
-let pencilColor = '#F0F';
+let pencilColor = '#FBFCFC';
 
 // Je créé la div 'pixelsContainer' et lui ajoute une classe.
 const pixelsContainer = document.createElement('div');
