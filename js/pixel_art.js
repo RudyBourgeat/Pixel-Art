@@ -43,7 +43,6 @@ for (color of colors) {
 //############## Ecouteurs d'évenements ######################
 let lespixels = document.querySelectorAll('.pixel');
 const columns = document.querySelectorAll('.column');
-const subTitle = document.getElementById('subTitle');
 const spraypaint = document.getElementById('color-icon');
 const paletteCloseButton = document.getElementById('colors-palette-close-button');
 const colorsChoices = document.querySelectorAll('.color-choice');
@@ -67,7 +66,6 @@ addEventListenerOnPixels(lespixels);
 // Sur le bouton bombe de peinture
 spraypaint.addEventListener('click', () => {
     spraypaint.style.display = 'none';
-    subTitle.style.display = 'none';
     washButton.style.display = 'none';
     resizeButton.style.display = 'none';
     colorsPalette.style.display = 'flex';
@@ -78,7 +76,6 @@ paletteCloseButton.addEventListener('click', () => {
     spraypaint.style.display = 'flex';
     washButton.style.display = 'flex'
     resizeButton.style.display = 'flex';
-    subTitle.style.display = 'block';
     colorsPalette.style.display = 'none';
 });
 
@@ -90,7 +87,6 @@ colorsChoices.forEach(choice => {
         spraypaint.style.display = 'flex';
         washButton.style.display = 'flex';
         resizeButton.style.display = 'flex';
-        subTitle.style.display = 'block';
         colorsPalette.style.display = 'none';
     });
 });
@@ -107,14 +103,12 @@ gridSizeCloseButton.addEventListener('click', () => {
     spraypaint.style.display = 'flex';
     washButton.style.display = 'flex'
     resizeButton.style.display = 'flex';
-    subTitle.style.display = 'block';
     resizeMenu.style.display = 'none';
 });
 
 // Sur le bouton de mesure des dimension
 resizeButton.addEventListener('click', () => {
     spraypaint.style.display = 'none';
-    subTitle.style.display = 'none';
     washButton.style.display = 'none';
     resizeButton.style.display = 'none';
     resizeMenu.style.display = 'flex';
@@ -137,7 +131,6 @@ gridSizeForm.addEventListener('submit', (event) => {
     spraypaint.style.display = 'flex';
     washButton.style.display = 'flex'
     resizeButton.style.display = 'flex';
-    subTitle.style.display = 'block';
     resizeMenu.style.display = 'none';
 });
 

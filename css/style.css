@@ -10,6 +10,10 @@ h1 {
     margin-bottom: 1em;
 }
 
+.nav-bar-button {
+    max-width: 40px;
+}
+
 h2 {
     text-align: center;
 }
@@ -19,7 +23,6 @@ h2 {
     padding: 3px;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px 2px;
-    width: 4.4vw
 }
 
 #color-icon:active {
@@ -35,7 +38,6 @@ h2 {
     padding: 3px;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px 2px;
-    width: 4.4vw
 }
 
 #wash-icon:active {
@@ -51,7 +53,6 @@ h2 {
     padding: 3px;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px 2px;
-    width: 4.4vw
 }
 
 #grid-resize:active {
