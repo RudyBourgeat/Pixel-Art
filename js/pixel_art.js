@@ -44,6 +44,7 @@ const paletteCloseButton = document.getElementById('colors-palette-close-button'
 const colorsChoices = document.querySelectorAll('.color-choice');
 const washButton = document.getElementById('wash-icon');
 const resizeButton = document.getElementById('grid-resize');
+const resizeMenu = document.getElementById('resize-menu');
 
 // Sur les pixels
 lespixels.forEach(pixel => {
@@ -96,6 +97,7 @@ resizeButton.addEventListener('click', () => {
     subTitle.style.display = 'none';
     washButton.style.display = 'none';
     resizeButton.style.display = 'none';
+    resizeMenu.style.display = 'flex';
 });
 
 //#############################################################

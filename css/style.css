@@ -91,6 +91,10 @@ h2 {
     background-color: #e74d3cd1;
 }
 
+#resize-menu {
+    display: none;
+}
+
 .pixelsContainer {
     display: flex;
     border: solid 2px blueviolet;
