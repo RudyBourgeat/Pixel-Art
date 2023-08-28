@@ -43,6 +43,7 @@ const spraypaint = document.getElementById('color-icon');
 const paletteCloseButton = document.getElementById('colors-palette-close-button');
 const colorsChoices = document.querySelectorAll('.color-choice');
 const washButton = document.getElementById('wash-icon');
+const resizeButton = document.getElementById('grid-resize');
 
 // Sur les pixels
 lespixels.forEach(pixel => {
@@ -56,6 +57,7 @@ spraypaint.addEventListener('click', () => {
     spraypaint.style.display = 'none';
     subTitle.style.display = 'none';
     washButton.style.display = 'none';
+    resizeButton.style.display = 'none';
     colorsPalette.style.display = 'flex';
 });
 
@@ -63,6 +65,7 @@ spraypaint.addEventListener('click', () => {
 paletteCloseButton.addEventListener('click', () => {
     spraypaint.style.display = 'flex';
     washButton.style.display = 'flex'
+    resizeButton.style.display = 'flex';
     subTitle.style.display = 'block';
     colorsPalette.style.display = 'none';
 });
@@ -74,6 +77,7 @@ colorsChoices.forEach(choice => {
         spraypaint.style.backgroundColor = choice.colorCode;
         spraypaint.style.display = 'flex';
         washButton.style.display = 'flex';
+        resizeButton.style.display = 'flex';
         subTitle.style.display = 'block';
         colorsPalette.style.display = 'none';
     });
@@ -84,6 +88,14 @@ washButton.addEventListener('click', () => {
     lespixels.forEach(pixel => {
         pixel.style.backgroundColor = '#FBFCFC';
     });
+});
+
+// Sur le bouton de mesure des dimension
+resizeButton.addEventListener('click', () => {
+    spraypaint.style.display = 'none';
+    subTitle.style.display = 'none';
+    washButton.style.display = 'none';
+    resizeButton.style.display = 'none';
 });
 
 //#############################################################
