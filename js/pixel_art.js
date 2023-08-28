@@ -42,6 +42,7 @@ const subTitle = document.getElementById('subTitle');
 const spraypaint = document.getElementById('color-icon');
 const paletteCloseButton = document.getElementById('colors-palette-close-button');
 const colorsChoices = document.querySelectorAll('.color-choice');
+const washButton = document.getElementById('wash-icon');
 
 // Sur les pixels
 lespixels.forEach(pixel => {
@@ -54,12 +55,14 @@ lespixels.forEach(pixel => {
 spraypaint.addEventListener('click', () => {
     spraypaint.style.display = 'none';
     subTitle.style.display = 'none';
+    washButton.style.display = 'none';
     colorsPalette.style.display = 'flex';
 });
 
 // Sur le bouton fermer la palette
 paletteCloseButton.addEventListener('click', () => {
     spraypaint.style.display = 'flex';
+    washButton.style.display = 'flex'
     subTitle.style.display = 'block';
     colorsPalette.style.display = 'none';
 });
@@ -70,6 +73,7 @@ colorsChoices.forEach(choice => {
         pencilColor = choice.colorCode;
         spraypaint.style.backgroundColor = choice.colorCode;
         spraypaint.style.display = 'flex';
+        washButton.style.display = 'flex';
         subTitle.style.display = 'block';
         colorsPalette.style.display = 'none';
     });

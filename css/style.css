@@ -15,8 +15,6 @@ h2 {
 }
 
 #color-icon {
-    display: flex;
-    align-items: center;
     border: solid 1.5px rgba(0, 0, 0, 0.597);
     padding: 3px;
     border-radius: 10px;
@@ -29,6 +27,22 @@ h2 {
 }
 
 #color-icon:hover {
+    box-shadow: inset 0px 0px 8px 2px;
+}
+
+#wash-icon {
+    border: solid 1.5px rgba(0, 0, 0, 0.597);
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px 2px;
+    width: 4.4vw
+}
+
+#wash-icon:active {
+    background-color: rgba(0, 0, 0, 0.284);
+}
+
+#wash-icon:hover {
     box-shadow: inset 0px 0px 8px 2px;
 }
 
