@@ -36,9 +36,12 @@ for (color of colors) {
 };
 
 //############## Ecouteurs d'évenements ######################
-// Sur les pixels
 const lespixels = document.querySelectorAll('.pixel');
+const subTitle = document.getElementById('subTitle');
+const spraypaint = document.getElementById('color-icon');
+const paletteCloseButton = document.getElementById('colors-palette-close-button');
 
+// Sur les pixels
 lespixels.forEach(pixel => {
     pixel.addEventListener('click', () => {
         pixel.style.backgroundColor = pencilColor;
@@ -46,11 +49,17 @@ lespixels.forEach(pixel => {
 });
 
 // Sur le bouton bombe de peinture
-const subTitle = document.getElementById('subTitle');
-const spraypaint = document.getElementById('color-icon');
 spraypaint.addEventListener('click', () => {
     spraypaint.style.display = 'none';
     subTitle.style.display = 'none';
     colorsPalette.style.display = 'flex';
 });
+
+// Sur le bouton fermer la palette
+paletteCloseButton.addEventListener('click', () => {
+    spraypaint.style.display = 'flex';
+    subTitle.style.display = 'block';
+    colorsPalette.style.display = 'none';
+});
+
 //#############################################################
